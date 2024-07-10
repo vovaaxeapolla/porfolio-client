@@ -1,0 +1,129 @@
+.footer
+    max-width: 768px
+    margin: 0 auto
+    padding: 0 .5rem
+
+.container
+    margin: 2.5rem 0
+    display: flex
+    align-items: center
+    gap: 2.5rem
+    color: var(--dark-grey)
+
+.link
+    width: 3rem
+    height: 3rem
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    border-radius: 50%
+    border: 1px solid var(--main-color)
+    position: relative
+
+    &::before
+        content: ''
+        inset: 0
+        position: absolute
+        background: var(--gradient)
+        z-index: -1
+
+    svg
+        fill: var(--black)
+
+.created
+    padding: 1rem
+    display: flex
+    justify-content: center
+    position: relative
+
+    &::before
+        content: ''
+        width: 100%
+        height: 1px
+        position: absolute
+        background: var(--gradient)
+        top: 0
+
+.subscribe
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2rem
+    gap: 2rem
+    margin: 5rem 0
+    box-shadow: none
+    background: var(--gradient)
+    border: none
+
+    @media  (max-width: 768px)
+        &
+            flex-direction: column
+
+    .title
+        width: 100%
+        text-align: center
+        color: var(--white)
+        font-weight: bold
+        font-size: 1.125rem
+
+    .glow
+        background: var(--gradient)
+        inset: -1rem
+        filter: blur(1rem)
+        position: absolute
+        z-index: -1
+        opacity: .5
+
+    form
+        width: 100%
+        display: flex
+        gap: .5rem
+        align-items: center
+        justify-content: center
+        position: relative
+
+        .email
+            display: flex
+
+        input
+            height: 3rem
+            max-width: 240px
+            width: 100%
+            display: block
+            position: relative
+            padding: .5rem
+            box-sizing: border-box
+            line-height: 1rem
+            transition: border-color .25s
+            border-color: var(--white)
+            transition: .25s
+            background: #ffffff2f
+
+            &:focus
+                outline: none
+
+            &:hover
+                background: var(--main-color-transparent)
+
+            &::placeholder
+                color: var(--white)
+
+        button
+            min-width: 3rem
+            min-height: 3rem
+            height: 3rem
+            width: 3rem
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            transition: .25s
+            fill: var(--white)
+            border-color: var(--white)
+            background: #ffffff2f
+
+            &:hover
+                fill: var(--white)
+                background: var(--main-color)
+                border-color: var(--main-color)

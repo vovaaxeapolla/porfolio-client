@@ -1,11 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --black: #1d1d1d;
+  --white: #fff;
+  --main-color: #ebad64;
+  --main-color-transparent: #a2754e2f;
+  --secondary-color: #c490f1;
+  --secondary-color-transparent: #9557942f;
+  --gradient: linear-gradient(90deg, #ebad64, #c490f1);
+  --gradient-transparent: linear-gradient(60deg, #ebad642f, #c490f12f);
+  --light-grey: #c5c5c5;
+  --dark-grey: #787878;
+  --text-color: #706f6c;
+  --title-color: #1d1d1d;
+  --shadow: 0 .5125rem .925rem -.25rem rgba(0, 0, 0, .1);
+  --stroke-color: #c5c5c5;
+  --hover-background-color: #00000011;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +31,93 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.fi-1 {
+  --index: 1
+}
+
+.fi-2 {
+  --index: 2
+}
+
+.fi-3 {
+  --index: 3
+}
+
+.fi-4 {
+  --index: 4
+}
+
+
+.fade-in {
+  animation: fade-in .6s both;
+  animation-delay: calc(var(--index)* .13s);
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(18px);
+    opacity: 0;
   }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  color: var(--black);
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.page {
+  padding: 0 .5rem;
+  margin: 5rem auto;
+  max-width: 768px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: var(--title-color);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.title {
+  color: var(--title-color);
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.text {
+  color: var(--text-color);
+  line-height: 1.5rem;
+  font-size: .875rem;
+}
+
+.tile {
+  background: var(--white);
+  border-radius: .5rem;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid var(--stroke-color);
 }

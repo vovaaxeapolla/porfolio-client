@@ -1,0 +1,38 @@
+.container
+    margin: 1rem 0
+
+.section
+    margin-top: 2.5rem
+
+.description
+    padding: .5rem
+
+.project
+    display: flex
+    align-items: flex-start
+
+    .title
+        padding-right: 2.5rem
+        position: relative
+
+        &::before
+            content: ''
+            width: 100%
+            height: 1px
+            background: var(--stroke-color)
+            position: absolute
+            bottom: 0
+
+    &:nth-child(2)
+        width: 100%
+
+    .img
+        width: 100%
+        aspect-ratio: 16/9
+        overflow: hidden
+        border-radius: .5rem
+        margin-top: 1rem
+    img
+        object-fit: cover
+        width: 100%
+        height: 100%
